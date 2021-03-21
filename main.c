@@ -4,16 +4,6 @@ void ADC_Enable(void);
 void ADC_Start(int);
 void ADC_Init (void)
 {
-	/************** STEPS TO FOLLOW *****************
-	1. Enable ADC and GPIO clock
-	2. Set the prescalar in the Common Control Register (CCR)
-	3. Set the Scan Mode and Resolution in the Control Register 1 (CR1)
-	4. Set the Continuous Conversion, EOC, and Data Alignment in Control Reg 2 (CR2)
-	5. Set the Sampling Time for the channels in ADC_SMPRx
-	6. Set the Regular channel sequence length in ADC_SQR1
-	7. Set the Respective GPIO PINs in the Analog Mode
-	************************************************/
-
 //1. Enable ADC and GPIO clock
 	RCC->APB2ENR |= (1<<8);  // enable ADC1 clock
 	RCC->AHB1ENR |= (1<<0);  // enable GPIOA clock
